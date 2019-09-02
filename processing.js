@@ -13552,7 +13552,7 @@ module.exports = function setupParser(Processing, options) {
           p.redraw();
           curSketch.onFrameEnd();
         } catch(e_loop) {
-          window.clearInterval(looping);
+          clearInterval(looping);
           throw e_loop;
         }
       }, curMsPerFrame);
@@ -13593,7 +13593,7 @@ module.exports = function setupParser(Processing, options) {
     */
     p.exit = function() {
       // cleanup
-      window.clearInterval(looping);
+      clearInterval(looping);
       removeInstance(p.externals.canvas.id);
       delete(curElement.onmousedown);
 
